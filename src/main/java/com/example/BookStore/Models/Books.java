@@ -3,6 +3,7 @@ package com.example.BookStore.Models;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Entity
@@ -10,18 +11,18 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Books {
     @Id
     @GeneratedValue
-    private Long Id;
+    private String id;
     private String title;
     private String author;
     private String category;
     private int price;
     private int totalCopies;
-    public Long getId() {
-        return Id;
+    public String getId() {
+        return id;
     }
 
-    public void setId(Long id) {
-        Id = id;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -63,4 +64,6 @@ public class Books {
     public void setTotalCopies(int totalCopies) {
         this.totalCopies = totalCopies;
     }
-}
+
+
+      }
